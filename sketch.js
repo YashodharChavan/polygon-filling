@@ -49,15 +49,17 @@ function plotPoints(points) {
 
     for (let currIdx = 0; currIdx < n; currIdx++) {
         const nextIdx = (currIdx + 1) % n;
+        const current = points[currIdx]
+        const next = points[nextIdx]
 
         const startPoint = {
-            x: points[currIdx].x,
-            y: points[currIdx].y,
+            x: current.x,
+            y: current.y,
         }
 
         const endPoint = {
-            x: points[nextIdx].x,
-            y: points[nextIdx].y,
+            x: next.x,
+            y: next.y,
         }
 
         r.DrawLineEx(startPoint, endPoint, 5, r.RED);
@@ -74,15 +76,17 @@ function fillConvexPolygon(points, centroid) {
 
     for (let currIdx = 0; currIdx < n; currIdx++) {
         const nextIdx = (currIdx + 1) % n;
+        const current = points[currIdx]
+        const next = points[nextIdx]
 
         const startPoint = {
-            x: points[currIdx].x,
-            y: points[currIdx].y,
+            x: current.x,
+            y: current.y,
         }
 
         const endPoint = {
-            x: points[nextIdx].x,
-            y: points[nextIdx].y,
+            x: next.x,
+            y: next.y,
         }
 
         r.DrawTriangle(startPoint, centroid, endPoint, r.WHITE);
